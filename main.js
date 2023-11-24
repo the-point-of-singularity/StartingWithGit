@@ -10,13 +10,17 @@ form.addEventListener("submit", addItem);
 function addItem(e) {
     e.preventDefault();
 
-    //getting the value of the input field
+    //getting the value of the input field item
     var newItem = document.getElementById("item").value;
 
-    //creating a new <li> tag with the input value
+    //getting the value of the input field description
+    var description = " " + document.getElementById('description').value;
+
+    //creating a new <li> tag with the input value and the description value
     var li = document.createElement("li");
     li.className = "list-group-item";
     li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(description));
 
 
     //creating a delete button
@@ -47,4 +51,29 @@ function removeItem(e) {
             itemList.removeChild(li);
         }
     }
+}
+
+//creating a filter functionality
+var filter = document.getElementById('filter');
+filter.addEventListener('keyup',filterItems);
+function filterItems(e) {
+    var text = e.target.value.toLowerCase();
+    var items = itemList.getElementsByTagName('li');
+
+    //making an array to search
+    Array.from(items).forEach(function(item) {
+        
+        var itemName = item.firstChild.textContent;
+        var descriptionName = item.childNodes[1].textContent;
+        //console.log(descriptionName);
+        if(itemName.toLowerCase().indexOf(text) != -1) {
+            item.style.display='block';
+        }
+        else if(descriptionName.toLowerCase().indexOf(text) != -1) {
+            item.style.display='block';
+        }
+        else {
+            item.style.display='none';
+        }
+    })
 }
