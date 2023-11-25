@@ -26,6 +26,10 @@ function addItem(e) {
     deleteBtn.className="btn btn-danger btn-sm float-right delete";
     deleteBtn.appendChild(document.createTextNode('X'));
     li.appendChild(deleteBtn);
+    var editBtn = document.createElement("button");
+    editBtn.className = "btn btn-primary btn-sm float-right mr-2 edit";
+    editBtn.appendChild(document.createTextNode("Edit"));
+    li.appendChild(editBtn);
     itemList.appendChild(li);
 }
 itemList.addEventListener('click',removeItem);
