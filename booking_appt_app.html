@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+            integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+            crossorigin="anonymous"
+        />
+        <title>Book Your Appointment</title>
+        <style>
+            form {
+                text-align: center;
+            }
+            input {
+                font-size: 15px;
+                color: green;
+                width: 1000px;
+            }
+            h1 {
+                text-align: center;
+                color: orange;
+            }
+            body {
+                background-image: url("");
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Book a call</h1>
+        <p style="text-align: center">
+            Book a call slot and our representative will call you within 1hr of
+            selected time.
+        </p>
+        <form id="addForm">
+            <label for="username">Name:</label>
+            <br />
+            <input type="text" id="username" name="username" required />
+            <br />
+            <label for="email">Email:</label>
+            <br />
+            <input type="email" id="email" name="email" required />
+            <br />
+            <label for="phone">Phone:</label>
+            <br />
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+            />
+            <br />
+            <label for="dateofappt">Time for call:</label>
+            <br />
+            <input
+                style="color: darkgray"
+                type="date"
+                id="dateofappt"
+                name="dateofappt"
+            />
+            <br />
+            <input type="time" id="appt" name="appt" />
+            <br /><br />
+            <input
+                style="background-color: orange"
+                type="submit"
+                value="Get a call"
+            />
+            <br>
+            <br>
+            <br>
+            <h2 class="title">Input Details : </h2>
+            <ul id="items" class="list-group"></ul>
+        </form>
+        <script src="book_appt.js"></script>
+    </body>
+</html>
