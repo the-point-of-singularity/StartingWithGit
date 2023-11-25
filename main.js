@@ -15,6 +15,11 @@ function addItem(e) {
 
     //getting the value of the input field description
     var description = " " + document.getElementById('description').value;
+    
+
+    //storing the submit data in local storage
+    localStorage.setItem('UserDetails',newItem+description);
+
 
     //creating a new <li> tag with the input value and the description value
     var li = document.createElement("li");
