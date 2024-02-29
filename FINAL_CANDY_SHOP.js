@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var Buy_Now_Price = 0;
     // API endpoint URL from Crudcrud.
     const url =
-        "https://crudcrud.com/api/4d8485bf40044d0f88ce3b01c843ddd7/CandyCartData";
+        "https://crudcrud.com/api/e9c5fcdf0fbb44acb738c878fab35c36/CandyCartData";
 
     // Initial list of candies
     const candies = [
@@ -60,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="card-body">
                 <h5 class="card-title" data-id="${candy.id}">${candy.name}</h5>
                 <p class="card-text" data-id="${candy.id}">${candy.description}</p>
-                <p class="card-text" data-id="${candy.id}">Price: Rs${candy.price}</p>
+                <p class="card-text" data-id="${candy.id}">Price:&#8377;${candy.price}</p>
                 <p class="card-text" data-id="${candy.id}" id="check-availability-${candy.id}">Available: ${candy.availability}</p>
                 <input type="number" min="0" max="10" value="0" class="form-control quantity-input" data-id="${candy.id}">
                 <button class="btn btn-success mt-2 add-to-cart-btn" data-id="${candy.id}">Add to Cart</button>
@@ -78,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 ); //Converting the input field value into a number.
                 if (quantity > 0 && quantity <= 10) {
                     addToCart(candy, quantity);
+                } else {
+                    alert("Please enter a quantity between 1 to 10.");
                 }
             }
         );
@@ -187,13 +190,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to render cart items on DOM
     function renderCart() {
+        Buy_Now_Price = 0;
         selectedCandies.innerHTML = "";
         cart.forEach((item, index) => {
             const total_price = item.price * item.quantity;
+            Buy_Now_Price = Buy_Now_Price + total_price;
             const div = document.createElement("div");
             div.className = "cart-item";
             div.innerHTML = `
-                <span>${item.name} x ${item.quantity} x Rs${total_price}</span>
+                <span>${item.name} x ${item.quantity} x &#8377;${total_price}</span>
                 <button class="btn btn-info btn-sm edit-btn" data-index="${index} mr-2">Edit</button>
                 <button class="btn btn-danger btn-sm delete-btn" data-index="${index}">Delete</button>
             `;
@@ -236,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Function to delete cart item
     function deleteCartItem(index) {
+        const item = cart[index];
         const confirmDelete = confirm(
             `Do you want to delete ${cart[index].name}?`
         );
@@ -252,6 +258,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (itemToDelete) {
                         cart.splice(index, 1); //Removing the item from the local cart
                         renderCart();
+                        //Populating the input field in case of a delete
+                        const quantityInputs =
+                            candyList.getElementsByClassName("quantity-input");
+                        for (let input of quantityInputs) {
+                            if (input.dataset.id == item.id) {
+                                input.value = 0;
+                                break;
+                            }
+                        }
 
                         //Removing the item from backend
                         axios
@@ -295,4 +310,10 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => {
             console.log(error);
         });
+
+    //Attaching event listener to BUY NOW button
+    const BuyNowButton = document.getElementById("buyNowBtn");
+    BuyNowButton.addEventListener("click", function () {
+        alert("Your total price is: Rs " + Buy_Now_Price);
+    });
 });
