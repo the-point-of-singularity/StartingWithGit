@@ -7,7 +7,7 @@ const shopRoutes = require('./routes_folder/shop.js');
 
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 
 app.use(shopRoutes);
 
