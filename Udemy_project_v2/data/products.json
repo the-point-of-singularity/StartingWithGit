@@ -5,12 +5,5 @@
         "imageUrl": "https://images.pexels.com/photos/46274/pexels-photo-46274.jpeg?auto=compress&cs=tinysrgb&w=600",
         "description": "This is an awesome book!",
         "price": "19"
-    },
-    {
-        "title": "Second Book",
-        "imageUrl": "https://images.pexels.com/photos/904616/pexels-photo-904616.jpeg?auto=compress&cs=tinysrgb&w=600",
-        "description": "The second book.",
-        "price": "99",
-        "id": "0.01521729281114137"
     }
 ]
