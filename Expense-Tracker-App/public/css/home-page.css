@@ -1,0 +1,135 @@
+/* Custom CSS for expense_tracker.html */
+
+/* Reset default margin and padding */
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, figcaption, blockquote, dl, dd, dt, form, fieldset, legend, textarea, input {
+    margin: 0;
+    padding: 0;
+}
+
+/* Box sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+#main-header {
+    text-align: center;
+    background-color: #07630d; /* Darker green */
+    color: #fff;
+    padding: 1rem;
+}
+
+#header-title {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Form */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.form-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-inline label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+/* Smaller input fields */
+#expensecategory {
+    width: 50%; /* Adjust width as needed */
+}
+
+#expenseamount {
+    width: 30%; /* Adjust width as needed */
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #1e7e34; /* Darker green */
+}
+
+.btn {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1e7e34; /* Darker green */
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #19692c; /* Even darker green */
+}
+
+/* Expense List */
+#expense_list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0.75rem;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.title-box {
+    background-color: #ccdf52;
+    color: #fff;
+    padding: 5px 10px; /* Adjust padding to decrease height */
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    align-items: center; /* Vertically center the content */
+    height: 40px; /* Adjust height as needed */
+    max-width: 400px;
+}
+
+
+
+

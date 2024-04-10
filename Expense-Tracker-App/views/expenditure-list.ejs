@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EXPENDITURE LIST</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/css/expenditure-list.css" />
+  <title>EXPENDITURE LIST</title>
+</head>
+
+<body>
+  <header id="main-header" class="bg-success text-white p-4 mb-3">
+    <div class="container">
+      <h1 id="header-title">EXPENDITURE LIST</h1>
+    </div>
+  </header>
+  <form class="form-inline mb-3" action="/" method="GET" autocomplete="on" id="addForm">
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Your List of Expenses:</h4>
+          <% if (expenses.length > 0) { %>
+          <ul id="expenseList" class="list-group">
+            <!-- Expenditures will be dynamically added here -->
+            <% expenses.forEach(e => { %>
+            <li class="list-group-item">
+              <h5><%= e.category %></h5>
+              <h6>Amount: ₹<%= e.amount %></h6>
+              <h6>Description: <%= e.description %></h6>
+            </li>
+            <% }) %>
+          </ul>
+          <% } else { %>
+          <h4>No Expenses Added!</h4>
+          <% } %>
+          <hr>
+          <div>
+            <button class="btn" type="submit">Add More Expenses</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+</body>
+
+</html>
