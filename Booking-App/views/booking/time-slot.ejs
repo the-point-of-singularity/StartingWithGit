@@ -1,0 +1,46 @@
+<%- include('../includes/head.ejs') %>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="title-box">
+                <h4 class="title">Available Time Slots</h4>
+            </div>
+            <form action="/enter-details" method="POST">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <input type="radio" id="slot1" name="slot" value="09:00 AM" class="form-check-input">
+                        <label for="slot1" class="form-check-label">09:00 AM</label>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <input type="radio" id="slot2" name="slot" value="10:00 AM" class="form-check-input">
+                        <label for="slot2" class="form-check-label">10:00 AM</label>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <input type="radio" id="slot3" name="slot" value="11:00 AM" class="form-check-input">
+                        <label for="slot3" class="form-check-label">11:00 AM</label>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <input type="radio" id="slot3" name="slot" value="12:00 PM" class="form-check-input">
+                        <label for="slot3" class="form-check-label">12:00 PM</label>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <input type="radio" id="slot3" name="slot" value="01:00 PM" class="form-check-input">
+                        <label for="slot3" class="form-check-label">01:00 PM</label>
+                    </div>
+                </div>
+                <!-- Add more time slots as needed -->
+                <button type="submit" class="btn btn-primary mt-3">Book Selected Slot</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

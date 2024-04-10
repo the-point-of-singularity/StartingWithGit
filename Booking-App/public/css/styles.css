@@ -1,0 +1,37 @@
+/* styles.css */
+body {
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+}
+
+.form-check-input {
+    margin-right: 10px;
+}
+
+.title-box {
+    background-color: #9ad7e6;
+    color: #0b0b0b;
+    padding: 5px 10px; /* Adjust padding to decrease height */
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+    align-items: center; /* Vertically center the content */
+    height: 40px; /* Adjust height as needed */
+    max-width: 250px;
+}
+
+.title {
+    margin-bottom: 1.5rem;
+    text-align: left;
+    font-size: 1.5rem;
+    color: #333;
+}
