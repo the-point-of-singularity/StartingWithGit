@@ -31,6 +31,10 @@
               <h5><%= e.category %></h5>
               <h6>Amount: ₹<%= e.amount %></h6>
               <h6>Description: <%= e.description %></h6>
+              <div class="card__actions">
+                <a href="/admin/edit-expense/<%= e.id %>?edit=true" class="btn btn-info btn-darken-on-hover">Edit</a>
+                <a href="/admin/delete-expense/<%= e.id %>?delete=true" class="btn btn-danger btn-darken-on-hover">Delete</a>
+              </div>
             </li>
             <% }) %>
           </ul>
@@ -39,7 +43,7 @@
           <% } %>
           <hr>
           <div>
-            <button class="btn" type="submit">Add More Expenses</button>
+            <button class="btn btn-success btn-darken-on-hover" type="submit">Add More Expenses</button>
           </div>
 
         </div>

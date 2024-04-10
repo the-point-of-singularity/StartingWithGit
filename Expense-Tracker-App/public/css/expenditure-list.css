@@ -44,15 +44,10 @@ body {
     margin-bottom: 10px;
 }
 
-.btn {
-    background-color: #28a745;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.btn-darken-on-hover {
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
 }
 
-.btn:hover {
-    background-color: #218838;
+.btn-darken-on-hover:hover {
+    background-color: darken(#000, 10%); /* Darken the background color on hover */
 }

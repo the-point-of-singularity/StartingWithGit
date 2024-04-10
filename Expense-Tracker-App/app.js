@@ -14,6 +14,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+const adminRoutes = require('./routes/admin');
 const expenseRoutes = require('./routes/expense');
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
     });
 });
 
+app.use('/admin', adminRoutes);
 app.use('/', expenseRoutes);
 
 app.use(errorController.get404);
