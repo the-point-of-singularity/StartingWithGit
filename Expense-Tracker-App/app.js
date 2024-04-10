@@ -52,7 +52,6 @@ sequelize
         return user;//although we are returning an object, .then() wraps it in a promise
     })
     .then((user) => {
-        console.log(user);
         app.listen(5000);
     })
     .catch((err) => {
