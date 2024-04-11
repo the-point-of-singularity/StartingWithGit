@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#main-header {
+    background-color: #333; /* Dark gray header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Move the card up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.title-box {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 1.8em;
+    margin: 0;
+    text-transform: uppercase;
+    color: #333; /* Darker text color */
+}
+
+.booking-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.booking-item {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card-text {
+    margin: 0;
+    color: #666; /* Lighter text color */
+}
+
+.cancel-btn {
+    background-color: #e74c3c; /* Red button */
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
