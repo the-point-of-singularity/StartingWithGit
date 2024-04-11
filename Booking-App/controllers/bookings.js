@@ -1,4 +1,5 @@
 const Booking = require("../models/bookings");
+let newuser = {};
 
 exports.getTimeSlot = (req, res, next) => {
     res.render("booking/time-slot", {
@@ -26,6 +27,7 @@ exports.postBookingDetails = (req, res, next) => {
         phoneNumber: phno,
     })
     .then((result) => {
+        newuser = result;
         console.log("Created the Booking");
         res.redirect("/booking-successful");
     })
@@ -37,5 +39,6 @@ exports.postBookingDetails = (req, res, next) => {
 exports.getBookingSuccessful = (req, res, next) => {
     res.render("booking-successful", {
         path: "/booking-successful",
+        booking: newuser,
     });
 };

@@ -16,9 +16,11 @@
 </head>
 
 <body>
+    <%- include('./includes/nav-bar.ejs') %>
     <header id="main-header" class="bg-primary text-white p-4 mb-3">
         <div class="container">
-            <h1 id="header-title">Your appointment is booked!</h1>
+            <h3 id="header-title">Appointment booked successfully!</h3>
+            <h5>Hi <%= booking.name %>! Your appointment is booked for <%= booking.slot %>.</h5>
         </div>
     </header>
 </body>
